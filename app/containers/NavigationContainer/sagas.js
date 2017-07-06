@@ -4,7 +4,7 @@ import { takeLatest } from 'redux-saga';
 import { requestTopicsSucceeded, requestTopicsFailed } from './actions';
 
 export function fetchTopicsFromServer() {
-  return fetch('http://localhost:3000/api/topics')
+  return fetch('http://10.166.43.221:3000/api/topics')
     .then(response => response.json());
 }
 

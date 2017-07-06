@@ -4,7 +4,8 @@ import { SELECT_TOPIC } from '../NavigationContainer/constants';
 import { requestLinksSucceeded, requestLinksFailed } from './actions';
 
 function fetchLinksFromServer(topic) {
-  return fetch(`http://localhost:3000/api/topics/${topic.name}/links`)
+  //return fetch(`http://localhost:3000/api/topics/${topic.name}/links`)
+  return fetch(`http://10.166.43.221:3000/api/topics/${topic.name}/links`)
     .then(response => response.json());
 }
 

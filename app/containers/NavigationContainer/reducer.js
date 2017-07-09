@@ -18,6 +18,8 @@ const initialState = fromJS({
 
 function navigationContainerReducer(state = initialState, action) {
   switch (action.type) {
+    case '@@router/LOCATION_CHANGE':
+      return state.set('routerLocation', action.payload.pathname);
     case REQUEST_TOPICS_SUCCEEDED:
       return state.set('topics', action.topics);
     case SELECT_TOPIC:

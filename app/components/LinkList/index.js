@@ -9,20 +9,23 @@ import React from 'react';
 import Link from '../Link';
 import styles from './styles.css';
 
-function LinkList({ links }) {
+function LinkList({ links, topicName }) {
   const linkNodes = links.map(l => (
     <Link key={l.id} link={l} />
   ));
 
   return (
     <div className={styles.linkList}>
+      {topicName}
       {linkNodes}
     </div>
   );
 }
 
 LinkList.propTypes = {
+  topicName: React.PropTypes.string.isRequired,
   links: React.PropTypes.arrayOf(React.PropTypes.shape({
+    voteCount: React.PropTypes.number.isRequired,
     description: React.PropTypes.string.isRequired,
     url: React.PropTypes.string.isRequired,
     id: React.PropTypes.string.isRequired

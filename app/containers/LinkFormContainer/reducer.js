@@ -6,15 +6,15 @@
 
 import { fromJS } from 'immutable';
 import {
-  DEFAULT_ACTION,
+  
 } from './constants';
 
 const initialState = fromJS({});
 
 function linkFormContainerReducer(state = initialState, action) {
   switch (action.type) {
-    case DEFAULT_ACTION:
-      return state;
+    // case ADD_LINK:
+    //   return state;
     default:
       return state;
   }

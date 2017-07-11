@@ -8,12 +8,12 @@
     justify-content: space-between;
 }
 
-.iconButton {
+.icon {
     cursor: pointer;
     margin-right: 15px;
 }
 
-.icon {
+.iconButton {
     font-size: 20px;
     color: #fff;
 }

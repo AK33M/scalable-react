@@ -7,7 +7,8 @@
 import {
   REQUEST_LINKS_SUCCEEDED,
   REQUEST_LINKS_FAILED,
-  REQUEST_LINKS
+  REQUEST_LINKS,
+  START_ADD
 } from './constants';
 
 export function requestLinks(topicName) {
@@ -29,4 +30,11 @@ export function requestLinksSucceeded(links) {
     type: REQUEST_LINKS_SUCCEEDED,
     links
   };
+}
+
+export function startAdd(topicName) {
+  return {
+    type: START_ADD,
+    topicName
+  }
 }

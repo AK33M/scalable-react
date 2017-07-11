@@ -8,7 +8,7 @@ import React from 'react';
 
 import styles from './styles.css';
 import validator from 'email-validator';
-import classNames from 'classnames';
+import TextInput from '../TextInput';
 
 class Login extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
@@ -19,7 +19,7 @@ class Login extends React.Component { // eslint-disable-line react/prefer-statel
   state = {};
 
   login = () => {
-    const email = this.emailField.value;
+    const email = this.emailField.value();
     if (!validator.validate(email)) {
       this.setState({errorText: 'Please provide a valid email'});
       return;
@@ -44,11 +44,11 @@ class Login extends React.Component { // eslint-disable-line react/prefer-statel
         <div className={styles.heading}>
           Login with your email.
         </div>
-        <input
-          className={classNames(styles.input, { [styles.inputError]: this.state.errorText })}
-          placeholder="Your email" ref={(f) => {
-          this.emailField = f;
-        }} type="text"/> {fieldError}
+        <TextInput placeholder="Your email" 
+                    ref={(f) => {this.emailField = f; }}
+                    errorText={this.state.errorText}
+                    />
+
         <div className={styles.actionContainer}>
           <div className={styles.button} onClick={this.props.cancelLogin}>
             cancel
